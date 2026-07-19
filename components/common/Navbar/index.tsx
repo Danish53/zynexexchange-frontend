@@ -3,7 +3,7 @@ import {
   HiOutlineChevronDown,
   HiOutlinePresentationChartLine,
   HiOutlineUserGroup,
-  HiOutlineRocketLaunch,
+  HiOutlineArrowTrendingUp,
   HiOutlineCog6Tooth,
   HiOutlineArrowDownTray,
   HiOutlineArrowUpTray,
@@ -304,7 +304,7 @@ const Navbar = ({
                             >
                               <a href="">
                                 {/* <span className="cp-user-icon">
-                                  <HiOutlineRocketLaunch size={18} />
+                                  <HiOutlineArrowTrendingUp size={18} />
                                 </span> */}
                                 <span className="cp-user-name">
                                   {navbar?.ico?.name
@@ -1219,7 +1219,7 @@ const Navbar = ({
                               >
                                 <div className="d-flex align-items-center gap-5">
                                   <span>
-                                    <HiOutlineRocketLaunch size={18} />
+                                    <HiOutlineArrowTrendingUp size={18} />
                                   </span>
                                   <span className="line-h-19">
                                     {navbar?.ico?.name
