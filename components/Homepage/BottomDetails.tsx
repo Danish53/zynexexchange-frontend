@@ -13,16 +13,16 @@ const BottomDetails = ({ landing }: any) => {
   return (
     <>
       {parseInt(landing?.landing_fifth_section_status) === 1 && (
-        <section className=" tradex-pt-[60px] md:tradex-pt-[120px] tradex-relative">
-          <div className=" tradex-bg-primary/30 tradex-w-[300px] tradex-h-[300px] tradex-rounded-full tradex-right-[160px] tradex-top-0 tradex-absolute z-[1] tradex-blur-[140px]"></div>
+        <section className="tradex-pt-10 md:tradex-pt-[120px] tradex-relative tradex-overflow-hidden">
+          <div className="tradex-bg-primary/30 tradex-w-[300px] tradex-h-[300px] tradex-rounded-full tradex-right-[160px] tradex-top-0 tradex-absolute z-[1] tradex-blur-[140px] tradex-hidden md:tradex-block"></div>
           <img
             src="/secure_curve_top_right.png"
             alt=""
-            className=" tradex-absolute tradex-right-0 tradex-top-0 tradex-max-h-[580px] z-[2]"
+            className="tradex-absolute tradex-right-0 tradex-top-0 tradex-max-h-[580px] z-[2] tradex-hidden md:tradex-block"
           />
-          <div className="tradex-container tradex-space-y-3 md:tradex-space-y-10 tradex-relative">
-            <div className=" lg:tradex-text-center">
-              <h3 className=" tradex-text-[24px] tradex-leading-[32px] md:tradex-text-[32px] md:tradex-leading-[48px] xl:tradex-text-[48px] xl:tradex-leading-[60px] !tradex-text-title tradex-font-bold">
+          <div className="tradex-container tradex-space-y-5 md:tradex-space-y-10 tradex-relative">
+            <div className="lg:tradex-text-center">
+              <h3 className="tradex-text-[22px] tradex-leading-[28px] md:tradex-text-[32px] md:tradex-leading-[48px] xl:tradex-text-[48px] xl:tradex-leading-[60px] !tradex-text-title tradex-font-bold tradex-tracking-[-0.02em]">
                 {landing?.secure_trade_title || t("Secure Trend System")}
               </h3>
             </div>
@@ -52,12 +52,12 @@ const BottomDetails = ({ landing }: any) => {
                   </p>
                 </div>
                 <Link href={`${landing?.know_more_link || "/"}`}>
-                  <a className=" tradex-group tradex-w-fit tradex-py-3 tradex-px-5 md:tradex-py-4 md:tradex-px-8 tradex-rounded-lg tradex-bg-title tradex-flex tradex-items-center tradex-gap-2 hover:tradex-bg-primary  hover:!tradex-text-white">
-                    <span className=" tradex-text-sm md:tradex-text-base md:tradex-leading-6 !tradex-text-background-main  group-hover:!tradex-text-white">
+                  <a className="tradex-group tradex-w-full sm:tradex-w-fit tradex-py-3.5 tradex-px-5 md:tradex-py-4 md:tradex-px-8 tradex-rounded-xl tradex-bg-primary tradex-flex tradex-items-center tradex-justify-center tradex-gap-2 hover:tradex-opacity-90 !tradex-text-white">
+                    <span className="tradex-text-sm md:tradex-text-base md:tradex-leading-6 !tradex-text-white">
                       {t(landing?.know_more_button_title || "Know More")}
                     </span>
                     <span>
-                      <FaArrowRight className=" tradex-w-3 md:tradex-w-[14px] !tradex-text-background-main  group-hover:!tradex-text-white" />
+                      <FaArrowRight className="tradex-w-3 md:tradex-w-[14px] !tradex-text-white" />
                     </span>
                   </a>
                 </Link>

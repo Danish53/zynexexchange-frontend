@@ -18,6 +18,62 @@
   height: calc(100vh - 80px);
 }
 
+/* Scale the hero orbit animation down proportionally on small screens
+   instead of cropping it */
+@media (max-width: 1023px) {
+  .hero-animate-wrap {
+    width: 280px;
+    margin: 0 auto;
+  }
+  .hero-animate-wrap svg {
+    width: 100%;
+    height: auto;
+    min-height: 0 !important;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-animate-wrap {
+    width: 360px;
+  }
+}
+
+/* Hide scrollbar for horizontal tab lists (mobile profile menu) */
+.tradex-scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tradex-scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---- Mobile polish for logged-in pages ----
+   Oversized headings on user pages are scaled down on small screens
+   without touching each page's markup. */
+@media (max-width: 767px) {
+  h1[class*="tradex-text-[40px]"],
+  h2[class*="tradex-text-[40px]"] {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+  h1[class*="tradex-text-[32px]"],
+  h2[class*="tradex-text-[32px]"],
+  h3[class*="tradex-text-[32px]"] {
+    font-size: 22px !important;
+    line-height: 28px !important;
+  }
+  h1[class*="tradex-text-[24px]"],
+  h2[class*="tradex-text-[24px]"],
+  h3[class*="tradex-text-[24px]"] {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  /* Table headers on user pages are too large on mobile */
+  th[class*="tradex-text-xl"] {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+}
+
 .layout__area--left {
   color: white;
 }

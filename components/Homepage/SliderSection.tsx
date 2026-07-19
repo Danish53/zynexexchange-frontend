@@ -160,7 +160,7 @@ const SliderSection = ({
                   <img
                     src={item.image || "Frame 1321314198.png"}
                     alt="about-image-phone"
-                    className=" tradex-cursor-pointer tradex-max-h-[175px] tradex-bg-background-main tradex-h-[175px] md:tradex-max-h-[215px] md:tradex-h-[215px] tradex-w-full tradex-object-cover tradex-object-center tradex-rounded-lg"
+                    className="tradex-cursor-pointer tradex-max-h-[140px] tradex-bg-background-main tradex-h-[140px] md:tradex-max-h-[215px] md:tradex-h-[215px] tradex-w-full tradex-object-cover tradex-object-center tradex-rounded-xl"
                   />
                 </Link>
               ))}

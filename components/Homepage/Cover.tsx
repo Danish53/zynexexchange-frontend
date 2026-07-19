@@ -18,7 +18,6 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
   const textControls = useAnimation();
   const imageControls = useAnimation();
 
-  // Text animation variants
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (index: any) => ({
@@ -35,10 +34,7 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
   };
 
   useEffect(() => {
-    // Trigger text animation with a delay
     textControls.start("visible");
-
-    // Trigger image animation after a longer delay
     setTimeout(() => {
       imageControls.start("visible");
     }, 1500);
@@ -47,31 +43,31 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
   return (
     <div>
       {parseInt(landing?.landing_first_section_status) === 1 && (
-        <section className="tradex-bg-background-primary tradex-min-h-[660px] tradex-relative tradex-overflow-hidden">
-          <div className=" tradex-bg-primary/30 tradex-w-full tradex-h-[385px] tradex-rounded-full tradex-left-0 tradex-top-0 tradex-absolute z-[1] tradex-blur-[140px]"></div>
+        <section className="tradex-bg-background-primary tradex-min-h-[auto] md:tradex-min-h-[660px] tradex-relative tradex-overflow-hidden">
+          <div className="tradex-bg-primary/30 tradex-w-full tradex-h-[280px] md:tradex-h-[385px] tradex-rounded-full tradex-left-0 tradex-top-0 tradex-absolute z-[1] tradex-blur-[140px]"></div>
 
           <img
             src="./banner_top_left.png"
-            className=" tradex-absolute tradex-top-0 tradex-left-0"
+            className="tradex-absolute tradex-top-0 tradex-left-0 tradex-hidden md:tradex-block"
             alt=""
           />
-          <div className=" tradex-container tradex-pt-8 md:tradex-pt-[80px] tradex-pb-10 md:tradex-pb-[140px] tradex-flex tradex-flex-col lg:tradex-flex-row tradex-items-center tradex-relative tradex-z-10 tradex-gap-6 md:tradex-gap-0">
-            <div className="xl:tradex-min-w-[700px] tradex-max-w-[700px] tradex-space-y-8 xl:tradex-space-y-[60px]">
-              <div className=" tradex-space-y-2 md:tradex-space-y-6">
-                <h1 className=" tradex-text-[32px] tradex-leading-[42px] md:tradex-text-[48px] md:tradex-leading-[64px] xl:tradex-text-[64px] xl:tradex-leading-[80px] !tradex-text-title">
+          <div className="tradex-container tradex-pt-6 md:tradex-pt-[80px] tradex-pb-8 md:tradex-pb-[140px] tradex-flex tradex-flex-col lg:tradex-flex-row tradex-items-center tradex-relative tradex-z-10 tradex-gap-5 md:tradex-gap-0">
+            <div className="xl:tradex-min-w-[700px] tradex-max-w-[700px] tradex-space-y-5 md:tradex-space-y-8 xl:tradex-space-y-[60px] tradex-w-full">
+              <div className="tradex-space-y-3 md:tradex-space-y-6">
+                <h1 className="tradex-text-[28px] tradex-leading-[36px] md:tradex-text-[48px] md:tradex-leading-[64px] xl:tradex-text-[64px] xl:tradex-leading-[80px] !tradex-text-title tradex-font-bold tradex-tracking-[-0.02em]">
                   {landing_title ? (
                     <TextAnimation text={landing_title} />
                   ) : (
                     <>
                       <TextAnimation text={`Make Easy Your`} />
-                      <span className=" !tradex-text-primary">
+                      <span className="!tradex-text-primary">
                         {t("Buy Sell & Trade")}
                       </span>
                       <span>{t(" Crypto Currency")}</span>
                     </>
                   )}
                 </h1>
-                <p className="tradex-max-w-[633px] tradex-text-xs tradex-leading-[18px] md:tradex-text-base md:tradex-leading-6 !tradex-text-body">
+                <p className="tradex-max-w-[633px] tradex-text-sm tradex-leading-5 md:tradex-text-base md:tradex-leading-6 !tradex-text-body">
                   {landing_description ||
                     t(`Uncover the ultimate synergy of trading and investment success
                   with our all-in-one platform – where seamless functionality
@@ -86,8 +82,8 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
                       : "/signup"
                   }
                 >
-                  <a className=" tradex-w-fit tradex-px-6 tradex-py-3 md:tradex-px-8 md:tradex-py-4 tradex-bg-title tradex-flex tradex-justify-center tradex-gap-2 tradex-items-center tradex-rounded-lg !tradex-text-background-main hover:tradex-bg-primary hover:!tradex-text-white">
-                    <span className=" tradex-text-sm md:tradex-text-base tradex-leading-6 tradex-font-semibold">
+                  <a className="tradex-w-full sm:tradex-w-fit tradex-px-6 tradex-py-3.5 md:tradex-px-8 md:tradex-py-4 tradex-bg-primary tradex-flex tradex-justify-center tradex-gap-2 tradex-items-center tradex-rounded-xl !tradex-text-white hover:tradex-opacity-90 tradex-shadow-[0_8px_24px_rgba(var(--primary-color),0.35)]">
+                    <span className="tradex-text-sm md:tradex-text-base tradex-leading-6 tradex-font-semibold">
                       {t("Register Now")}
                     </span>
                     <span>
@@ -97,11 +93,15 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
                 </Link>
               )}
             </div>
-            <div className=" tradex-flex tradex-justify-center tradex-w-full">
+            <div className="tradex-flex tradex-justify-center tradex-w-full">
               {landing_banner_image ? (
-                <img src={landing_banner_image || "./cover_img.png"} alt="" />
+                <img
+                  src={landing_banner_image || "./cover_img.png"}
+                  alt=""
+                  className="tradex-max-h-[260px] sm:tradex-max-h-[340px] md:tradex-max-h-[480px] tradex-w-auto tradex-object-contain"
+                />
               ) : (
-                <div className=" 2xl:-tradex-mt-[58px]">
+                <div className="hero-animate-wrap 2xl:-tradex-mt-[58px]">
                   <AnimateCoverSvg />
                 </div>
               )}

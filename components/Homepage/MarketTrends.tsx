@@ -79,24 +79,24 @@ const MarketTrends = ({
   return (
     <>
       {parseInt(landing?.landing_third_section_status) === 1 && (
-        <section className="tradex-pt-[60px] md:tradex-pt-[120px] tradex-relative tradex-z-10">
-          <div className="tradex-container tradex-space-y-6 md:tradex-space-y-10">
-            <div className=" tradex-flex tradex-justify-between tradex-items-center">
-              <h3 className=" tradex-text-[24px] tradex-leading-[32px] md:tradex-text-[32px] md:tradex-leading-[48px] xl:tradex-text-[48px] xl:tradex-leading-[60px] !tradex-text-title tradex-font-bold">
+        <section className="tradex-pt-8 md:tradex-pt-[120px] tradex-relative tradex-z-10">
+          <div className="tradex-container tradex-space-y-5 md:tradex-space-y-10">
+            <div className="tradex-flex tradex-justify-between tradex-items-center tradex-gap-3">
+              <h3 className="tradex-text-[22px] tradex-leading-[28px] md:tradex-text-[32px] md:tradex-leading-[48px] xl:tradex-text-[48px] xl:tradex-leading-[60px] !tradex-text-title tradex-font-bold tradex-tracking-[-0.02em]">
                 {landing?.market_trend_title || t("Crypto Market Trend")}
               </h3>
               <Link href={`/markets`}>
-                <a className=" tradex-px-3 tradex-py-2 md:tradex-py-4 md:tradex-px-6 tradex-flex tradex-gap-2 tradex-items-center tradex-text-xs md:tradex-text-base md:tradex-leading-6 tradex-font-semibold !tradex-text-title tradex-border tradex-border-title tradex-rounded-lg hover:tradex-bg-primary hover:!tradex-text-white hover:tradex-border-primary">
+                <a className="tradex-shrink-0 tradex-px-3 tradex-py-2 md:tradex-py-4 md:tradex-px-6 tradex-flex tradex-gap-2 tradex-items-center tradex-text-xs md:tradex-text-base md:tradex-leading-6 tradex-font-semibold !tradex-text-title tradex-border tradex-border-background-primary md:tradex-border-title tradex-rounded-xl hover:tradex-bg-primary hover:!tradex-text-white hover:tradex-border-primary">
                   <span>{t("See More")}</span>
                   <span>
-                    <FaArrowRight className=" tradex-w-3 md:tradex-w-[14px]" />
+                    <FaArrowRight className="tradex-w-3 md:tradex-w-[14px]" />
                   </span>
                 </a>
               </Link>
             </div>
 
-            <div className=" tradex-grid tradex-grid-cols-1 xl:tradex-grid-cols-3 tradex-gap-6 tradex-min-h-[600px]">
-              <div className=" xl:tradex-col-span-2 tradex-bg-background-main tradex-border tradex-border-background-primary tradex-rounded-xl tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-h-full tradex-pt-6 tradex-px-4 tradex-pb-4 tradex-space-y-6">
+            <div className="tradex-grid tradex-grid-cols-1 xl:tradex-grid-cols-3 tradex-gap-4 md:tradex-gap-6 xl:tradex-min-h-[600px]">
+              <div className="xl:tradex-col-span-2 tradex-bg-background-main tradex-border tradex-border-background-primary tradex-rounded-2xl tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-h-full tradex-pt-5 md:tradex-pt-6 tradex-px-3 md:tradex-px-4 tradex-pb-4 tradex-space-y-4 md:tradex-space-y-6">
                 <div className="tradex-pb-4 tradex-border-b tradex-border-background-primary">
                   <h4 className=" tradex-text-sm md:tradex-text-2xl md:tradex-leading-[30px] !tradex-text-title tradex-font-medium">
                     {t("Core Assets")}
@@ -142,10 +142,10 @@ const MarketTrends = ({
                                   />
                                 </div>
                                 <div>
-                                  <p className="tradex-text-base tradex-font-medium !tradex-text-title">
+                                  <p className="tradex-text-sm md:tradex-text-base tradex-font-medium !tradex-text-title">
                                     {item?.child_coin_name}
                                   </p>
-                                  <p className="tradex-text-sm !tradex-text-body">
+                                  <p className="tradex-hidden sm:tradex-block tradex-text-sm !tradex-text-body">
                                     {item?.child_full_name}
                                   </p>
                                 </div>
@@ -205,7 +205,7 @@ const MarketTrends = ({
                                       }`
                                 }
                               >
-                                <a className="tradex-py-3 tradex-px-6 tradex-rounded-lg tradex-border tradex-border-primary group-hover:tradex-bg-primary group-hover:!tradex-text-white !tradex-text-title tradex-bg-transparent tradex-text-sm tradex-leading-[18px]">
+                                <a className="tradex-py-2 tradex-px-3 md:tradex-py-3 md:tradex-px-6 tradex-rounded-lg tradex-border tradex-border-primary group-hover:tradex-bg-primary group-hover:!tradex-text-white !tradex-text-title tradex-bg-transparent tradex-text-xs md:tradex-text-sm tradex-leading-[18px] tradex-font-semibold">
                                   {t("Trade")}
                                 </a>
                               </Link>
@@ -221,7 +221,7 @@ const MarketTrends = ({
                   )}
                 </div>
               </div>
-              <div className=" md:tradex-grid xl:tradex-block tradex-grid-cols-2 xl:tradex-grid-cols-1 tradex-bg-background-main tradex-border tradex-border-background-primary tradex-rounded-xl tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-h-full tradex-pt-6 tradex-px-4 tradex-pb-4 tradex-gap-4 xl:tradex-space-y-4">
+              <div className="md:tradex-grid xl:tradex-block tradex-grid-cols-2 xl:tradex-grid-cols-1 tradex-bg-background-main tradex-border tradex-border-background-primary tradex-rounded-2xl tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-h-full tradex-pt-5 md:tradex-pt-6 tradex-px-3 md:tradex-px-4 tradex-pb-4 tradex-gap-4 xl:tradex-space-y-4">
                 <div>
                   <div className="tradex-pb-4 tradex-border-b tradex-border-background-primary">
                     <h4 className=" tradex-text-sm md:tradex-text-2xl md:tradex-leading-[30px] !tradex-text-title tradex-font-medium">

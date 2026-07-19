@@ -14,13 +14,13 @@ const DistributionSection = ({ landing }: any) => {
     <>
       {parseInt(landing?.landing_fourth_section_status) === 1 &&
         parseInt(landing?.download_link_display_type) === 1 && (
-          <section className="tradex-relative tradex-z-10 tradex-pt-[60px] md:tradex-pt-[120px]">
-            <div className=" tradex-container">
-              <div className=" tradex-flex tradex-flex-col lg:tradex-flex-row  tradex-gap-10">
+          <section className="tradex-relative tradex-z-10 tradex-pt-10 md:tradex-pt-[120px]">
+            <div className="tradex-container">
+              <div className="tradex-flex tradex-flex-col lg:tradex-flex-row tradex-gap-8 md:tradex-gap-10">
                 <div className="lg:tradex-max-w-[500px] xl:tradex-max-w-[695px] xl:tradex-min-w-[695px] tradex-space-y-6 md:tradex-space-y-12">
-                  <div className=" tradex-space-y-4 md:tradex-space-y-10">
-                    <div className=" tradex-space-y-2 md:tradex-space-y-4">
-                      <h3 className="tradex-max-w-[547px] tradex-text-[24px] tradex-leading-[32px]  md:tradex-text-[32px] md:tradex-leading-[48px] xl:tradex-text-[48px] xl:tradex-leading-[60px] !tradex-text-title tradex-font-bold">
+                  <div className="tradex-space-y-4 md:tradex-space-y-10">
+                    <div className="tradex-space-y-2 md:tradex-space-y-4">
+                      <h3 className="tradex-max-w-[547px] tradex-text-[22px] tradex-leading-[28px] md:tradex-text-[32px] md:tradex-leading-[48px] xl:tradex-text-[48px] xl:tradex-leading-[60px] !tradex-text-title tradex-font-bold tradex-tracking-[-0.02em]">
                         {landing?.trade_anywhere_title ||
                           `${appTitle}: Trade With Anytime Anywhere`}
                       </h3>

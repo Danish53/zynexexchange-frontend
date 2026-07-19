@@ -52,13 +52,13 @@ export default function UserProfileSidebar({
   const { settings } = useSelector((state: RootState) => state.common);
 
   return (
-    <div className=" tradex-h-fit tradex-bg-background-main tradex-rounded-lg tradex-border tradex-border-background-primary tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-px-4 tradex-pt-12 tradex-pb-6 tradex-space-y-8">
+    <div className=" tradex-h-fit tradex-bg-background-main tradex-rounded-2xl tradex-border tradex-border-background-primary tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-px-4 tradex-pt-8 md:tradex-pt-12 tradex-pb-6 tradex-space-y-6 md:tradex-space-y-8">
       {showUserInfo && (
-        <div className=" tradex-flex tradex-flex-col tradex-justify-center tradex-items-center tradex-gap-6 ">
-          <div className=" tradex-min-w-[140px] tradex-relative">
+        <div className=" tradex-flex tradex-flex-col tradex-justify-center tradex-items-center tradex-gap-4 md:tradex-gap-6 ">
+          <div className=" tradex-min-w-[100px] md:tradex-min-w-[140px] tradex-relative">
             <img
               src={photo}
-              className=" tradex-w-[140px] tradex-h-[140px] tradex-max-w-[140px] tradex-max-h-[140px] tradex-object-cover tradex-object-center tradex-rounded-full tradex-border-solid tradex-border-[3px] tradex-border-primary"
+              className=" tradex-w-[100px] tradex-h-[100px] md:tradex-w-[140px] md:tradex-h-[140px] tradex-max-w-[140px] tradex-max-h-[140px] tradex-object-cover tradex-object-center tradex-rounded-full tradex-border-solid tradex-border-[3px] tradex-border-primary"
               alt=""
             />
             {!isEditEnabled ? (
@@ -82,22 +82,22 @@ export default function UserProfileSidebar({
             )}
           </div>
           <div className=" tradex-space-y-1 tradex-text-center">
-            <h3 className=" tradex-text-[32px] !tradex-text-title tradex-leading-[38px] tradex-font-bold">
+            <h3 className=" tradex-text-[22px] tradex-leading-[28px] md:tradex-text-[32px] !tradex-text-title md:tradex-leading-[38px] tradex-font-bold">
               {first_name + " " + last_name}
             </h3>
-            <p className=" tradex-text-xl !tradex-text-title tradex-leading-6">
+            <p className=" tradex-text-sm md:tradex-text-xl !tradex-text-body tradex-leading-6 tradex-break-all">
               {email}
             </p>
           </div>
         </div>
       )}
-      <div className=" tradex-space-y-4">
+      <div className=" tradex-flex tradex-flex-row lg:tradex-flex-col tradex-gap-2 lg:tradex-gap-4 tradex-overflow-x-auto lg:tradex-overflow-visible tradex-pb-2 lg:tradex-pb-0 tradex-scrollbar-none">
         {profileTabs.map((profileTab: any, index: number) => (
           <Link href={profileTab?.url} key={index}>
             <a
-              className={` tradex-inline-block tradex-w-full tradex-py-3 tradex-px-2.5 tradex-rounded tradex-bg-background-primary !tradex-text-title tradex-text-xl tradex-leading-6 ${
+              className={` tradex-inline-block tradex-w-auto lg:tradex-w-full tradex-whitespace-nowrap lg:tradex-whitespace-normal tradex-py-2.5 lg:tradex-py-3 tradex-px-4 lg:tradex-px-2.5 tradex-rounded-lg tradex-bg-background-primary !tradex-text-title tradex-text-sm md:tradex-text-base lg:tradex-text-xl tradex-leading-6 tradex-font-medium tradex-transition-colors ${
                 router.pathname == profileTab?.url &&
-                "tradex-bg-primary !tradex-text-white"
+                "!tradex-bg-primary !tradex-text-white"
               }`}
             >
               {t(profileTab?.name)}
@@ -108,7 +108,7 @@ export default function UserProfileSidebar({
         {parseInt(settings?.knowledgebase_support_module) === 1 && (
           <Link href={`/support`}>
             <a
-              className={` tradex-inline-block tradex-w-full tradex-py-3 tradex-px-2.5 tradex-rounded tradex-bg-background-primary tradex-text-title tradex-text-xl tradex-leading-6`}
+              className={` tradex-inline-block tradex-w-auto lg:tradex-w-full tradex-whitespace-nowrap lg:tradex-whitespace-normal tradex-py-2.5 lg:tradex-py-3 tradex-px-4 lg:tradex-px-2.5 tradex-rounded-lg tradex-bg-background-primary tradex-text-title tradex-text-sm md:tradex-text-base lg:tradex-text-xl tradex-leading-6 tradex-font-medium tradex-transition-colors`}
             >
               {t("Support")}
             </a>

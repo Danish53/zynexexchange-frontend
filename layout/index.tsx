@@ -160,12 +160,8 @@ const Index = ({ children }: any) => {
   };
   useEffect(() => {
     const token = Cookies.get("token");
-    const terms = Cookies.get("terms");
-    if (terms === "yes" && settings.cookie_status == "0") {
-      setShowTerms(false);
-    } else if (terms != "yes" && settings.cookie_status == "1") {
-      setShowTerms(true);
-    }
+    // Cookie / privacy consent popup disabled
+    setShowTerms(false);
     if (token) {
       dispatch(GetUserInfoByTokenAction());
     }

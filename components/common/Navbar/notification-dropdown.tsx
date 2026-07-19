@@ -23,7 +23,12 @@ import {
   HiOutlineGlobeAlt,
   HiOutlineBell,
   HiOutlineArrowRight,
+  HiOutlineUser,
+  HiOutlineCodeBracketSquare,
+  HiOutlineQuestionMarkCircle,
+  HiOutlineArrowRightOnRectangle,
 } from "react-icons/hi2";
+import { IoWalletOutline } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { LogoutAction } from "state/actions/user";
 
@@ -101,11 +106,16 @@ const NotificationDropdown = ({
                       <p className="nav-userName font-bold custom-text-primary-color-4">
                         {user?.first_name!} {user?.last_name!}
                       </p>
+                      {user?.email && (
+                        <p className="profile-dropdown-email">{user?.email}</p>
+                      )}
                     </div>
                     <Link href="/user/profile">
                       <button className="dropdown-item" type="button">
                         <a href="">
-                          <i className="fa-regular fa-user"></i>
+                          <span className="profile-menu-icon">
+                            <HiOutlineUser size={18} />
+                          </span>
                           {t("Profile")}
                         </a>
                       </button>
@@ -113,7 +123,9 @@ const NotificationDropdown = ({
                     <Link href="/user/settings">
                       <button className="dropdown-item" type="button">
                         <a href="">
-                          <i className="fa fa-cog"></i>
+                          <span className="profile-menu-icon">
+                            <HiOutlineCog6Tooth size={18} />
+                          </span>
                           {t("My Settings")}
                         </a>
                       </button>
@@ -122,7 +134,9 @@ const NotificationDropdown = ({
                     <Link href={isLoggedIn ? "/user/api-settings" : "/signin"}>
                       <button className="dropdown-item" type="button">
                         <a href="">
-                          <i className="fa fa-cog"></i>
+                          <span className="profile-menu-icon">
+                            <HiOutlineCodeBracketSquare size={18} />
+                          </span>
                           {t("Api Settings")}
                         </a>
                       </button>
@@ -131,7 +145,9 @@ const NotificationDropdown = ({
                     <Link href="/user/my-wallet">
                       <button className="dropdown-item" type="button">
                         <a href="-wallet">
-                          <i className="fa fa-credit-card"></i>
+                          <span className="profile-menu-icon">
+                            <IoWalletOutline size={18} />
+                          </span>
                           {t("My Wallet")}
                         </a>
                       </button>
@@ -139,20 +155,25 @@ const NotificationDropdown = ({
                     <Link href={isLoggedIn ? "/user/faq" : "/signin"}>
                       <button className="dropdown-item" type="button">
                         <a href="-wallet">
-                          <i className="fa fa-credit-card"></i>
+                          <span className="profile-menu-icon">
+                            <HiOutlineQuestionMarkCircle size={18} />
+                          </span>
                           {t("FAQ")}
                         </a>
                       </button>
                     </Link>
                     <button
-                      className="dropdown-item"
+                      className="dropdown-item logout-item"
                       type="button"
                       onClick={() => {
                         dispatch(LogoutAction());
                       }}
                     >
                       <a>
-                        <i className="fa fa-sign-out"></i> {t("Logout")}
+                        <span className="profile-menu-icon">
+                          <HiOutlineArrowRightOnRectangle size={18} />
+                        </span>
+                        {t("Logout")}
                       </a>
                     </button>
                   </div>

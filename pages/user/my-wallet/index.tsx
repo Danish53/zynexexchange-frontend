@@ -305,12 +305,12 @@ const MyWallet: NextPage = () => {
                   {""} {currency}
                 </h3>
               </div>
-              <div className=" tradex-flex  tradex-flex-col md:tradex-flex-row  md:tradex-items-center tradex-gap-6">
+              <div className=" tradex-flex tradex-flex-row md:tradex-items-center tradex-gap-3 md:tradex-gap-6 tradex-flex-wrap">
                 <div>
-                  <label className="!tradex-mb-0 tradex-text-xl tradex-leading-6 tradex-font-semibold tradex-text-body">
+                  <label className="!tradex-mb-0 tradex-text-sm md:tradex-text-xl tradex-leading-6 tradex-font-semibold tradex-text-body">
                     {t("Show")}
                     <select
-                      className=" tradex-ml-4 !tradex-bg-background-main tradex-py-2.5 tradex-px-5 tradex-border !tradex-border-background-primary tradex-rounded tradex-text-sm tradex-leading-5 tradex-text-title"
+                      className=" tradex-ml-2 md:tradex-ml-4 !tradex-bg-background-main tradex-py-2.5 tradex-px-3 md:tradex-px-5 tradex-border !tradex-border-background-primary tradex-rounded-lg tradex-text-sm tradex-leading-5 tradex-text-title"
                       placeholder="10"
                       onChange={(e) => {
                         setSelectedLimit(e.target.value);
@@ -325,12 +325,12 @@ const MyWallet: NextPage = () => {
                   </label>
                 </div>
 
-                <div>
+                <div className=" tradex-flex-1 md:tradex-flex-none">
                   <label className=" !tradex-mb-0 tradex-flex tradex-items-center tradex-text-xl tradex-leading-6 tradex-font-semibold tradex-text-body">
                     <input
                       type="search"
                       aria-controls="table"
-                      className=" !tradex-bg-transparent md:tradex-ml-4 tradex-py-2.5 tradex-px-3 tradex-border !tradex-border-background-primary tradex-rounded tradex-text-sm tradex-leading-5"
+                      className=" !tradex-bg-transparent md:tradex-ml-4 tradex-w-full md:tradex-w-auto tradex-py-2.5 tradex-px-3 tradex-border !tradex-border-background-primary tradex-rounded-lg tradex-text-sm tradex-leading-5"
                       value={search || ""}
                       onChange={(e) => setSearch(e.target.value)}
                       placeholder={t("Search")}
