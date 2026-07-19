@@ -55,7 +55,7 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
             className=" tradex-absolute tradex-top-0 tradex-left-0"
             alt=""
           />
-          <div className=" tradex-container tradex-pt-8 md:tradex-pt-[80px] tradex-pb-[140px] tradex-flex tradex-flex-col lg:tradex-flex-row tradex-items-center tradex-relative tradex-z-10 tradex-gap-6 md:tradex-gap-0">
+          <div className=" tradex-container tradex-pt-8 md:tradex-pt-[80px] tradex-pb-10 md:tradex-pb-[140px] tradex-flex tradex-flex-col lg:tradex-flex-row tradex-items-center tradex-relative tradex-z-10 tradex-gap-6 md:tradex-gap-0">
             <div className="xl:tradex-min-w-[700px] tradex-max-w-[700px] tradex-space-y-8 xl:tradex-space-y-[60px]">
               <div className=" tradex-space-y-2 md:tradex-space-y-6">
                 <h1 className=" tradex-text-[32px] tradex-leading-[42px] md:tradex-text-[48px] md:tradex-leading-[64px] xl:tradex-text-[64px] xl:tradex-leading-[80px] !tradex-text-title">

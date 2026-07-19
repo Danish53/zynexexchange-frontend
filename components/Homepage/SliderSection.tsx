@@ -103,7 +103,9 @@ const SliderSection = ({
   return (
     <section
       className={`tradex-relative tradex-z-10 ${
-        landing?.landing_first_section_status == 1 && "-tradex-mt-[140px] "
+        landing?.landing_first_section_status == 1
+          ? "tradex-mt-6 md:-tradex-mt-[140px]"
+          : ""
       }`}
     >
       <div className="tradex-container tradex-space-y-6 ">
