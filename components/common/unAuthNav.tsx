@@ -1,9 +1,19 @@
 import React, { useEffect, useState, useRef } from "react";
+import {
+  HiOutlineChevronDown,
+  HiOutlinePresentationChartLine,
+  HiOutlineUserGroup,
+  HiOutlineGlobeAlt,
+  HiOutlineSun,
+  HiOutlineMoon,
+  HiOutlineXMark,
+  HiOutlineCog6Tooth,
+  HiOutlineArrowRightOnRectangle,
+  HiOutlineSquares2X2,
+  HiOutlineChartBarSquare,
+} from "react-icons/hi2";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { BsFillMoonFill, BsFillSunFill, BsBarChartLine } from "react-icons/bs";
-import { FaPeopleArrows } from "react-icons/fa";
-import { BiLineChart, BiShapeCircle } from "react-icons/bi";
 import OutsideClickHandler from "react-outside-click-handler";
 import { RootState } from "state/store";
 import useTranslation from "next-translate/useTranslation";
@@ -16,22 +26,12 @@ import {
   darkModeToggle,
   swapGreenToRedAndRedToGeen,
 } from "helpers/functions";
-import { IoMdGlobe } from "react-icons/io";
-import {
-  AiOutlineAppstore,
-  AiOutlineClose,
-  AiOutlineLineChart,
-  AiOutlineLogin,
-  AiOutlineSetting,
-} from "react-icons/ai";
 import {
   EXCHANGE_LAYOUT_ONE,
   EXCHANGE_LAYOUT_THREE,
   EXCHANGE_LAYOUT_TWO,
   STATUS_ACTIVE,
 } from "helpers/core-constants";
-import { FiChevronDown, FiSettings } from "react-icons/fi";
-import { AiFillCaretDown } from "react-icons/ai";
 
 const UnAuthNav = ({
   setThemeColor,
@@ -102,7 +102,7 @@ const UnAuthNav = ({
 
   return (
     <div className="">
-      <div className="cp-user-top-bar position-fixed !tradex-bg-gradient-to-r !tradex-from-primary-10  !tradex-to-background-primary !tradex-to-40% !tradex-shadow-[2px_2px_32px_0px_#8F8F8F26]">
+      <div className="cp-user-top-bar position-fixed !tradex-bg-background-main/95 !tradex-backdrop-blur-md !tradex-border-b !tradex-border-background-primary !tradex-shadow-[0_4px_24px_0_rgba(0,0,0,0.06)]">
         <div className="container-fluid">
           <div className="d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center gap-20">
@@ -135,11 +135,11 @@ const UnAuthNav = ({
                       aria-expanded="true"
                     >
                       {/* <span className="cp-user-icon">
-                        <BsBarChartLine />
+                        <HiOutlineChartBarSquare />
                       </span> */}
                       <span>{t("Exchange")}</span>
                       <div>
-                        <AiFillCaretDown size={12} />
+                        <HiOutlineChevronDown size={14} className="tradex-opacity-70" />
                       </div>
                     </a>
 
@@ -150,7 +150,7 @@ const UnAuthNav = ({
                             <div className="py-1 menu-hover">
                               <span className="cp-user-icon">
                                 {" "}
-                                <BiShapeCircle />{" "}
+                                <HiOutlinePresentationChartLine size={18} />{" "}
                               </span>{" "}
                               <span>{t("Spot Trading")}</span>{" "}
                             </div>
@@ -163,7 +163,7 @@ const UnAuthNav = ({
                             <a className="py-1 menu-hover">
                               {" "}
                               <span className="cp-user-icon">
-                                <FaPeopleArrows />
+                                <HiOutlineUserGroup size={18} />
                               </span>
                               <span>{t("P2P Trading")}</span>{" "}
                             </a>
@@ -204,7 +204,7 @@ const UnAuthNav = ({
                     <Link href="/markets">
                       <a>
                         {/* <span className="cp-user-icon">
-                          <BiLineChart />
+                          <HiOutlineChartBarSquare size={18} />
                         </span> */}
                         <span>{t("Markets")}</span>
                       </a>
@@ -249,7 +249,7 @@ const UnAuthNav = ({
                       aria-expanded="true"
                     >
                       <span className="">
-                        <IoMdGlobe size={25} />
+                        <HiOutlineGlobeAlt size={22} />
                       </span>
                     </a>
                     <ul className="dropdown-menu-main display-grid w-370 display-grid grid-temp-col-2 w-370 lang-list-position">
@@ -274,11 +274,11 @@ const UnAuthNav = ({
                     >
                       {theme === 0 ? (
                         <>
-                          <BsFillSunFill size={20} />
+                          <HiOutlineSun size={20} />
                         </>
                       ) : (
                         <>
-                          <BsFillMoonFill size={14} />
+                          <HiOutlineMoon size={18} />
                         </>
                       )}
                     </a>
@@ -292,7 +292,7 @@ const UnAuthNav = ({
                             setIsSettingsDropdownOpen((prev) => !prev)
                           }
                         >
-                          <AiOutlineSetting size={20} className="mr-2" />
+                          <HiOutlineCog6Tooth size={20} className="mr-2" />
                         </span>
                         {isSettingsDropdownOpen && (
                           <div className="settings-dropdown">
@@ -681,7 +681,7 @@ const UnAuthNav = ({
                 <ul className="navbar-nav mr-auto">
                   <li className="text-right">
                     <span onClick={() => setActive(false)}>
-                      <AiOutlineClose size={20} />
+                      <HiOutlineXMark size={20} />
                     </span>
                   </li>
                   {navbar?.trade?.status && (
@@ -707,12 +707,12 @@ const UnAuthNav = ({
                         ) : (
                           <div className="d-flex align-items-center gap-5">
                             <span>
-                              <BsBarChartLine />
+                              <HiOutlineChartBarSquare size={18} />
                             </span>
                             <span className="line-h-19">{t("Exchange")}</span>
                           </div>
                         )}
-                        <FiChevronDown size={20} />
+                        <HiOutlineChevronDown size={20} />
                       </a>
                       <ul
                         className="dropdown-menu bg-transparent border-0 py-0 my-0"
@@ -768,7 +768,7 @@ const UnAuthNav = ({
                         <a className="nav-link text-primary-color-two">
                           <div className="d-flex align-items-center gap-5">
                             <span>
-                              <BiLineChart />
+                              <HiOutlineChartBarSquare size={18} />
                             </span>
                             <span className="line-h-19">{t("Futures")}</span>
                           </div>
@@ -787,7 +787,7 @@ const UnAuthNav = ({
                       <a className="nav-link text-primary-color-two">
                         <div className="d-flex align-items-center gap-5">
                           <span>
-                            <BiLineChart />
+                            <HiOutlineChartBarSquare size={18} />
                           </span>
                           <span className="line-h-19">{t("Markets")}</span>
                         </div>
@@ -799,7 +799,7 @@ const UnAuthNav = ({
                       <a className="nav-link text-primary-color-two">
                         <div className="d-flex align-items-center gap-5">
                           <span>
-                            <AiOutlineLogin />
+                            <HiOutlineArrowRightOnRectangle size={18} />
                           </span>
                           <span className="line-h-19">{t("Login")}</span>
                         </div>
@@ -811,7 +811,7 @@ const UnAuthNav = ({
                       <a className="nav-link text-primary-color-two">
                         <div className="d-flex align-items-center gap-5">
                           <span>
-                            <AiOutlineAppstore />
+                            <HiOutlineSquares2X2 size={18} />
                           </span>
                           <span className="line-h-19">{t("Sign up")}</span>
                         </div>
@@ -823,7 +823,7 @@ const UnAuthNav = ({
                     <div className="d-flex gap-10 align-items-center justify-content-between py-3">
                       <div className="d-flex align-items-center gap-5">
                         <span>
-                          <FiSettings size={16} />
+                          <HiOutlineCog6Tooth size={16} />
                         </span>
                         <p className="text-16 text-primary-color-two line-h-19">
                           {t("Theme")}
@@ -850,7 +850,7 @@ const UnAuthNav = ({
                           setActive(false);
                         }}
                       >
-                        <IoMdGlobe size={20} />
+                        <HiOutlineGlobeAlt size={20} />
                       </span>
                       <span
                         className="text-primary-color-two text-16 leading-18"
@@ -883,7 +883,7 @@ const UnAuthNav = ({
                 <ul className="navbar-nav mr-auto">
                   <li className="text-right">
                     <span onClick={() => setLanguageActive(false)}>
-                      <AiOutlineClose size={20} />
+                      <HiOutlineXMark size={20} />
                     </span>
                   </li>
                   {settings?.LanguageList?.map((item: any, index: any) => (

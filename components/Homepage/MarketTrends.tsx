@@ -96,7 +96,7 @@ const MarketTrends = ({
             </div>
 
             <div className=" tradex-grid tradex-grid-cols-1 xl:tradex-grid-cols-3 tradex-gap-6 tradex-min-h-[600px]">
-              <div className=" xl:tradex-col-span-2 tradex-border tradex-border-background-primary tradex-rounded-lg tradex-h-full tradex-pt-6 tradex-px-4 tradex-pb-4 tradex-space-y-6">
+              <div className=" xl:tradex-col-span-2 tradex-bg-background-main tradex-border tradex-border-background-primary tradex-rounded-xl tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-h-full tradex-pt-6 tradex-px-4 tradex-pb-4 tradex-space-y-6">
                 <div className="tradex-pb-4 tradex-border-b tradex-border-background-primary">
                   <h4 className=" tradex-text-sm md:tradex-text-2xl md:tradex-leading-[30px] !tradex-text-title tradex-font-medium">
                     {t("Core Assets")}
@@ -221,7 +221,7 @@ const MarketTrends = ({
                   )}
                 </div>
               </div>
-              <div className=" md:tradex-grid xl:tradex-block tradex-grid-cols-2 xl:tradex-grid-cols-1 tradex-border tradex-border-background-primary tradex-rounded-lg tradex-h-full tradex-pt-6 tradex-px-4 tradex-pb-4 xl:tradex-space-y-4">
+              <div className=" md:tradex-grid xl:tradex-block tradex-grid-cols-2 xl:tradex-grid-cols-1 tradex-bg-background-main tradex-border tradex-border-background-primary tradex-rounded-xl tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-h-full tradex-pt-6 tradex-px-4 tradex-pb-4 tradex-gap-4 xl:tradex-space-y-4">
                 <div>
                   <div className="tradex-pb-4 tradex-border-b tradex-border-background-primary">
                     <h4 className=" tradex-text-sm md:tradex-text-2xl md:tradex-leading-[30px] !tradex-text-title tradex-font-medium">

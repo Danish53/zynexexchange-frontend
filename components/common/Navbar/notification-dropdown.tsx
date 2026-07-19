@@ -15,12 +15,15 @@ import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState, useEffect, useRef } from "react";
-import { AiOutlineSetting } from "react-icons/ai";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-import { FaQq } from "react-icons/fa";
-import { HiArrowNarrowRight, HiUserCircle } from "react-icons/hi";
-import { IoMdGlobe } from "react-icons/io";
-import { RiNotificationBadgeLine } from "react-icons/ri";
+import {
+  HiOutlineCog6Tooth,
+  HiOutlineMoon,
+  HiOutlineSun,
+  HiOutlineUserCircle,
+  HiOutlineGlobeAlt,
+  HiOutlineBell,
+  HiOutlineArrowRight,
+} from "react-icons/hi2";
 import { useDispatch } from "react-redux";
 import { LogoutAction } from "state/actions/user";
 
@@ -75,7 +78,7 @@ const NotificationDropdown = ({
                   >
                     <span className="cp-user-avater">
                       <span>
-                        <HiUserCircle size={30} />
+                        <HiOutlineUserCircle size={30} />
                       </span>
                       <span className="cp-user-avater-info"></span>
                     </span>
@@ -199,7 +202,7 @@ const NotificationDropdown = ({
                             <Link href="/user/notification">
                               <a className="view-all">{t("View All")}</a>
                             </Link>
-                            <HiArrowNarrowRight />
+                            <HiOutlineArrowRight />
                           </div>
                         </div>
                       </div>
@@ -210,7 +213,7 @@ const NotificationDropdown = ({
                               ?.slice(0, 5)
                               ?.map((item: any, index: number) => (
                                 <div className="notify-icon-title" key={index}>
-                                  <RiNotificationBadgeLine
+                                  <HiOutlineBell
                                     size={20}
                                     className="notify-menu-icon"
                                   />
@@ -266,7 +269,7 @@ const NotificationDropdown = ({
                       aria-expanded="true"
                     >
                       <span className="">
-                        <IoMdGlobe size={25} />
+                        <HiOutlineGlobeAlt size={25} />
                       </span>
                     </a>
                     <ul className="dropdown-menu-main display-grid grid-temp-col-2 w-370 lang-list-position">
@@ -287,11 +290,11 @@ const NotificationDropdown = ({
                     <a href="#">
                       {theme === 0 ? (
                         <>
-                          <BsFillSunFill size={25} className="mr-2" />
+                          <HiOutlineSun size={25} className="mr-2" />
                         </>
                       ) : (
                         <>
-                          <BsFillMoonFill size={20} className="mr-2" />
+                          <HiOutlineMoon size={20} className="mr-2" />
                         </>
                       )}
                     </a>
@@ -305,7 +308,7 @@ const NotificationDropdown = ({
                             setIsSettingsDropdownOpen((prev) => !prev)
                           }
                         >
-                          <AiOutlineSetting size={20} className="mr-2" />
+                          <HiOutlineCog6Tooth size={20} className="mr-2" />
                         </span>
                         {isSettingsDropdownOpen && (
                           <div className="settings-dropdown">

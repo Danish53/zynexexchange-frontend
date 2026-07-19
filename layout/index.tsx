@@ -16,6 +16,7 @@ import { RootState } from "state/store";
 import Echo from "laravel-echo";
 import Pusher from "pusher-js";
 import CookieAccept from "components/common/cookie-accept";
+import MobileBottomNav from "components/common/MobileBottomNav";
 import Head from "next/head";
 import {
   setCopyright_text,
@@ -258,6 +259,7 @@ const Index = ({ children }: any) => {
         pauseOnHover
       />
       <div className="tradex-mt-[68px]">{children}</div>
+      <MobileBottomNav />
       {showterms && <CookieAccept iUnderStand={iUnderStand} />}
     </div>
   ) : (
@@ -300,6 +302,7 @@ const Index = ({ children }: any) => {
         pauseOnHover
       />
       <div className="tradex-mt-[68px]">{children}</div>
+      <MobileBottomNav />
       {showterms && <CookieAccept iUnderStand={iUnderStand} />}
     </>
   );

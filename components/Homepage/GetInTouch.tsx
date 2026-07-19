@@ -29,7 +29,7 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
                   target="_blank"
                   rel="noreferrer"
                   key={index}
-                  className=" tradex-flex tradex-flex-col tradex-items-center tradex-justify-center tradex-gap-y-2 md:tradex-gap-y-4 tradex-py-8 tradex-px-3 tradex-bg-background-card tradex-rounded-lg md:tradex-min-w-[312px] md:tradex-min-h-[246px] tradex-shadow-[2px_2px_50px_0px_#0000000F] tradex-transition-all tradex-duration-[260ms] tradex-ease-[cubic-bezier(0.42,0,0.58,1)] tradex-delay-[0s] hover:-tradex-translate-y-2"
+                  className=" tradex-flex tradex-flex-col tradex-items-center tradex-justify-center tradex-gap-y-2 md:tradex-gap-y-4 tradex-py-8 tradex-px-3 tradex-bg-background-card tradex-rounded-xl tradex-border tradex-border-background-primary md:tradex-min-w-[312px] md:tradex-min-h-[246px] tradex-shadow-[2px_2px_50px_0px_#0000000F] tradex-transition-all tradex-duration-[260ms] tradex-ease-[cubic-bezier(0.42,0,0.58,1)] tradex-delay-[0s] hover:-tradex-translate-y-2 hover:tradex-border-primary/40"
                 >
                   <div className=" tradex-flex tradex-flex-col  tradex-gap-y-2  md:tradex-gap-y-6 tradex-items-center tradex-justify-center">
                     <img

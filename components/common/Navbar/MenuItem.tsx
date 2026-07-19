@@ -8,7 +8,7 @@ export default function MenuItem({ title, icon, href }: any) {
     <Link href={href}>
       <li className={router.pathname == href ? "cp-user-active-page" : ""}>
         <a href="" className="menu-hover">
-          <span className="cp-user-icon">{icon}</span>
+          <span className="cp-user-icon nav-menu-icon">{icon}</span>
           <span>{title}</span>
         </a>
       </li>

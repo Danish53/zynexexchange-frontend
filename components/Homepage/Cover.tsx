@@ -47,7 +47,7 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
   return (
     <div>
       {parseInt(landing?.landing_first_section_status) === 1 && (
-        <section className="tradex-bg-background-primary tradex-min-h-[660px] tradex-relative">
+        <section className="tradex-bg-background-primary tradex-min-h-[660px] tradex-relative tradex-overflow-hidden">
           <div className=" tradex-bg-primary/30 tradex-w-full tradex-h-[385px] tradex-rounded-full tradex-left-0 tradex-top-0 tradex-absolute z-[1] tradex-blur-[140px]"></div>
 
           <img
@@ -67,7 +67,7 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
                       <span className=" !tradex-text-primary">
                         {t("Buy Sell & Trade")}
                       </span>
-                      <span>{t("Crypto Currency")}</span>
+                      <span>{t(" Crypto Currency")}</span>
                     </>
                   )}
                 </h1>

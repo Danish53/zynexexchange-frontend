@@ -169,13 +169,14 @@ const DistributionSection = ({ landing }: any) => {
                     )}
                   </div>
                 </div>
-                <div>
+                <div className="tradex-flex tradex-items-center tradex-justify-center">
                   <img
                     src={
                       landing?.trade_anywhere_left_img ||
                       "/trade_anywhere_right.png"
                     }
                     alt=""
+                    className="tradex-w-full tradex-max-w-[560px] tradex-object-contain"
                   />
                 </div>
               </div>

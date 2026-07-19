@@ -1,24 +1,34 @@
 import React, { useState, useEffect } from "react";
+import {
+  HiOutlineChevronDown,
+  HiOutlinePresentationChartLine,
+  HiOutlineUserGroup,
+  HiOutlineRocketLaunch,
+  HiOutlineCog6Tooth,
+  HiOutlineArrowDownTray,
+  HiOutlineArrowUpTray,
+  HiOutlineArrowsRightLeft,
+  HiOutlineShoppingCart,
+  HiOutlineTag,
+  HiOutlineArrowsUpDown,
+  HiOutlineNoSymbol,
+  HiOutlineGift,
+  HiOutlineCreditCard,
+  HiOutlineNewspaper,
+  HiOutlineSparkles,
+  HiOutlineLifebuoy,
+  HiOutlineBookOpen,
+  HiOutlineEllipsisHorizontalCircle,
+  HiOutlineGlobeAlt,
+  HiOutlineXMark,
+  HiOutlineDocumentChartBar,
+  HiOutlineBanknotes,
+  HiOutlineChartBarSquare,
+} from "react-icons/hi2";
+import { IoWalletOutline } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { BsBarChartLine, BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-import { BiLineChart, BiShapeCircle } from "react-icons/bi";
-import { BiMoney } from "react-icons/bi";
-import {
-  FaArtstation,
-  FaPeopleArrows,
-  FaQq,
-  FaTradeFederation,
-} from "react-icons/fa";
-import { BiNetworkChart } from "react-icons/bi";
-import { RiLuggageDepositLine, RiUserSettingsLine } from "react-icons/ri";
-import { IoCardSharp, IoLanguageSharp, IoNewspaper } from "react-icons/io5";
-import { FiChevronDown, FiSettings } from "react-icons/fi";
-import { CgProfile } from "react-icons/cg";
-import { HiOutlineDocumentReport } from "react-icons/hi";
 
-import { BiWalletAlt } from "react-icons/bi";
-import { RiCalendarEventLine } from "react-icons/ri";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "state/store";
 import { notification, notificationSeen } from "service/notification";
@@ -32,24 +42,13 @@ import {
 } from "helpers/functions";
 import NotificationDropdown from "./notification-dropdown";
 import { setNotificationData } from "state/reducer/user";
-import { IoIosGift, IoMdGlobe } from "react-icons/io";
 import {
   REFERRAL_TYPE_DEPOSIT,
   REFERRAL_TYPE_TRADE,
   STATUS_ACTIVE,
 } from "helpers/core-constants";
-import {
-  MdOutlineContactSupport,
-  MdOutlineSwapHorizontalCircle,
-  MdTransform,
-} from "react-icons/md";
-import { GiBuyCard, GiSellCard, GiTrade } from "react-icons/gi";
-import { GoStop } from "react-icons/go";
-import { AiFillCaretDown, AiFillGift, AiOutlineClose } from "react-icons/ai";
 import PlaceTopLeft from "components/gradient/placeTopLeft";
 import MenuItem from "./MenuItem";
-import { SiKnowledgebase } from "react-icons/si";
-import { CiSquareMore } from "react-icons/ci";
 import MenuItemForMobile from "./MenuItemForMobile";
 
 const Navbar = ({
@@ -123,7 +122,7 @@ const Navbar = ({
     <>
       {isLoggedIn ? (
         <>
-          <div className="cp-user-top-bar position-fixed !tradex-bg-gradient-to-r !tradex-from-primary-10  !tradex-to-background-primary !tradex-to-40% !tradex-shadow-[2px_2px_32px_0px_#8F8F8F26]">
+          <div className="cp-user-top-bar position-fixed !tradex-bg-background-main/95 !tradex-backdrop-blur-md !tradex-border-b !tradex-border-background-primary !tradex-shadow-[0_4px_24px_0_rgba(0,0,0,0.06)]">
             <div className="container-fluid">
               <div className="d-flex align-items-center justify-content-between main-navbar">
                 <div className="d-flex align-items-center gap-20">
@@ -169,7 +168,7 @@ const Navbar = ({
                               aria-expanded="true"
                             >
                               {/* <span className="cp-user-icon">
-                                <BsBarChartLine />
+                                <HiOutlineChartBarSquare />
                               </span> */}
                               <span className="cp-user-name">
                                 {navbar?.trade?.name
@@ -177,7 +176,7 @@ const Navbar = ({
                                   : t("Exchange")}
                               </span>
                               <div>
-                                <AiFillCaretDown size={12} />
+                                <HiOutlineChevronDown size={14} className="tradex-opacity-70" />
                               </div>
                             </a>
                           </Link>
@@ -195,7 +194,7 @@ const Navbar = ({
                                   <a href="" className="menu-hover">
                                     <span className="cp-user-icon">
                                       {" "}
-                                      <BiShapeCircle />{" "}
+                                      <HiOutlinePresentationChartLine size={18} />{" "}
                                     </span>{" "}
                                     <span>{t("Spot Trading")}</span>
                                   </a>
@@ -214,7 +213,7 @@ const Navbar = ({
                                 >
                                   <a href="" className="menu-hover">
                                     <span className="cp-user-icon">
-                                      <FaPeopleArrows />
+                                      <HiOutlineUserGroup size={18} />
                                     </span>
                                     <span>{t("P2P Trading")}</span>
                                   </a>
@@ -259,7 +258,7 @@ const Navbar = ({
                         <Link href="/markets">
                           <a>
                             {/* <span className="cp-user-icon">
-                              <BiLineChart />
+                              <HiOutlineChartBarSquare size={18} />
                             </span> */}
                             <span>{t("Markets")}</span>
                           </a>
@@ -282,7 +281,7 @@ const Navbar = ({
                           >
                             <a href="">
                               {/* <span className="cp-user-icon">
-                                <BiWalletAlt />
+                                <IoWalletOutline size={18} />
                               </span> */}
                               <span className="cp-user-name">
                                 {navbar?.wallet?.name
@@ -305,7 +304,7 @@ const Navbar = ({
                             >
                               <a href="">
                                 {/* <span className="cp-user-icon">
-                                  <RiCalendarEventLine />
+                                  <HiOutlineRocketLaunch size={18} />
                                 </span> */}
                                 <span className="cp-user-name">
                                   {navbar?.ico?.name
@@ -341,7 +340,7 @@ const Navbar = ({
                                 aria-expanded="true"
                               >
                                 {/* <span className="cp-user-icon">
-                                  <FiSettings />
+                                  <HiOutlineCog6Tooth size={18} />
                                 </span> */}
                                 <span className="cp-user-name">
                                   {navbar?.fiat?.name
@@ -349,7 +348,7 @@ const Navbar = ({
                                     : t("Fiat")}
                                 </span>
                                 <div>
-                                  <AiFillCaretDown size={12} />
+                                  <HiOutlineChevronDown size={14} className="tradex-opacity-70" />
                                 </div>
                               </a>
                             </Link>
@@ -369,7 +368,7 @@ const Navbar = ({
                                   >
                                     <a href="" className="menu-hover">
                                       <span className="cp-user-icon">
-                                        <RiLuggageDepositLine />
+                                        <HiOutlineArrowDownTray size={18} />
                                       </span>
                                       <span>
                                         {navbar?.fiat?.deposit.name
@@ -395,7 +394,7 @@ const Navbar = ({
                                   >
                                     <a href="" className="menu-hover">
                                       <span className="cp-user-icon">
-                                        <BiMoney />
+                                        <HiOutlineBanknotes size={18} />
                                       </span>
                                       <span>
                                         {navbar?.fiat?.withdrawal.name
@@ -446,7 +445,7 @@ const Navbar = ({
                               aria-expanded="true"
                             >
                               {/* <span className="cp-user-icon">
-                                <HiOutlineDocumentReport />
+                                <HiOutlineDocumentChartBar size={18} />
                               </span> */}
                               <span className="cp-user-name">
                                 {navbar?.reports?.name
@@ -454,7 +453,7 @@ const Navbar = ({
                                   : t("Reports")}
                               </span>
                               <div>
-                                <AiFillCaretDown size={12} />
+                                <HiOutlineChevronDown size={14} className="tradex-opacity-70" />
                               </div>
                             </a>
                           </Link>
@@ -479,7 +478,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <RiLuggageDepositLine />
+                                    <HiOutlineArrowDownTray size={18} />
                                   </span>
                                   <span>
                                     {navbar?.reports?.depositHistory?.name
@@ -508,7 +507,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <BiMoney />
+                                    <HiOutlineBanknotes size={18} />
                                   </span>
                                   <span>
                                     {navbar?.reports?.withdrawalHistory?.name
@@ -535,7 +534,7 @@ const Navbar = ({
                                 >
                                   <a href="" className="menu-hover">
                                     <span className="cp-user-icon">
-                                      <MdOutlineSwapHorizontalCircle />
+                                      <HiOutlineArrowsRightLeft size={18} />
                                     </span>
                                     <span>
                                       {navbar?.reports?.swapHistory?.name
@@ -563,7 +562,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <GiBuyCard />
+                                    <HiOutlineShoppingCart size={18} />
                                   </span>
                                   <span>
                                     {navbar?.reports?.buyOrderHistory?.name
@@ -591,7 +590,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <GiSellCard />
+                                    <HiOutlineTag size={18} />
                                   </span>
                                   <span>
                                     {navbar?.reports?.sellOrderHistory?.name
@@ -619,7 +618,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <MdTransform />
+                                    <HiOutlineArrowsUpDown size={18} />
                                   </span>
                                   <span>
                                     {navbar?.reports?.transactionHistory?.name
@@ -651,7 +650,7 @@ const Navbar = ({
                                 >
                                   <a href="" className="menu-hover">
                                     <span className="cp-user-icon">
-                                      <FiSettings />
+                                      <HiOutlineCog6Tooth size={18} />
                                     </span>
                                     <span>
                                       {navbar?.reports?.fiatDepositHistory?.name
@@ -681,7 +680,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <GoStop />
+                                    <HiOutlineNoSymbol size={18} />
                                   </span>
                                   <span>
                                     {navbar?.reports?.stopLimitHistory?.name ||
@@ -713,7 +712,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <BiMoney />
+                                    <HiOutlineBanknotes size={18} />
                                   </span>
                                   <span>
                                     {navbar?.reports?.referralEarnFromWithdrawal
@@ -745,7 +744,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <GiTrade />
+                                    <HiOutlineChartBarSquare size={18} />
                                   </span>
                                   <span>
                                     {navbar?.reports?.referralEarnFromTrade
@@ -777,7 +776,7 @@ const Navbar = ({
                                 >
                                   <a href="" className="menu-hover">
                                     <span className="cp-user-icon">
-                                      <BiMoney />
+                                      <HiOutlineBanknotes size={18} />
                                     </span>
                                     <span>
                                       {navbar?.reports?.fiatWithdrawalHistory
@@ -837,7 +836,7 @@ const Navbar = ({
                                   : t("Gift Cards")}
                               </span>
                               <div>
-                                <AiFillCaretDown size={12} />
+                                <HiOutlineChevronDown size={14} className="tradex-opacity-70" />
                               </div>
                             </a>
                           </Link>
@@ -853,7 +852,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <IoIosGift />
+                                    <HiOutlineGift size={18} />
                                   </span>
                                   <span>{t("Overview")}</span>
                                 </a>
@@ -875,7 +874,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <IoCardSharp />
+                                    <HiOutlineCreditCard size={18} />
                                   </span>
                                   <span>
                                     {navbar?.giftCards?.themedCards?.name
@@ -900,7 +899,7 @@ const Navbar = ({
                               >
                                 <a href="" className="menu-hover">
                                   <span className="cp-user-icon">
-                                    <IoCardSharp />
+                                    <HiOutlineCreditCard size={18} />
                                   </span>
                                   <span>
                                     {navbar?.giftCards?.themedCards?.name
@@ -925,7 +924,7 @@ const Navbar = ({
                           <Link href="/demo-trade">
                             <a target="_blank">
                               {/* <span className="cp-user-icon">
-                                <BiShapeCircle />
+                                <HiOutlinePresentationChartLine size={18} />
                               </span> */}
                               <span>{t("Demo Trade")}</span>
                             </a>
@@ -956,7 +955,7 @@ const Navbar = ({
                               {t("More")}
                             </span>
                             <div>
-                              <AiFillCaretDown size={12} />
+                              <HiOutlineChevronDown size={14} className="tradex-opacity-70" />
                             </div>
                           </a>
 
@@ -965,7 +964,7 @@ const Navbar = ({
                               <MenuItem
                                 title={t("Blog")}
                                 href={"/blog"}
-                                icon={<IoNewspaper />}
+                                icon={<HiOutlineNewspaper size={18} />}
                               />
                             )}
 
@@ -973,7 +972,7 @@ const Navbar = ({
                               <MenuItem
                                 title={t("Staking")}
                                 href={"/staking"}
-                                icon={<FaArtstation />}
+                                icon={<HiOutlineSparkles size={18} />}
                               />
                             )}
 
@@ -985,7 +984,7 @@ const Navbar = ({
                                 href={
                                   isLoggedIn === true ? "/support" : "/signin"
                                 }
-                                icon={<MdOutlineContactSupport />}
+                                icon={<HiOutlineLifebuoy size={18} />}
                               />
                             )}
                             {parseInt(
@@ -994,14 +993,14 @@ const Navbar = ({
                               <MenuItem
                                 title={t("Knowledgebase")}
                                 href={"/knowledgebase"}
-                                icon={<SiKnowledgebase />}
+                                icon={<HiOutlineBookOpen size={18} />}
                               />
                             )}
                             {parseInt(settings?.blog_news_module) === 1 && (
                               <MenuItem
                                 title={t("News")}
                                 href={"/news"}
-                                icon={<IoNewspaper />}
+                                icon={<HiOutlineNewspaper size={18} />}
                               />
                             )}
                           </ul>
@@ -1039,7 +1038,7 @@ const Navbar = ({
                     <ul className="navbar-nav mr-auto">
                       <li className="text-right">
                         <span onClick={() => setActive(false)}>
-                          <AiOutlineClose size={20} />
+                          <HiOutlineXMark size={20} />
                         </span>
                       </li>
                       {navbar?.trade?.status && (
@@ -1065,14 +1064,14 @@ const Navbar = ({
                             ) : (
                               <div className="d-flex align-items-center gap-5">
                                 <span>
-                                  <BsBarChartLine />
+                                  <HiOutlineChartBarSquare />
                                 </span>
                                 <span className="line-h-19">
                                   {t("Exchange")}
                                 </span>
                               </div>
                             )}
-                            <FiChevronDown size={20} />
+                            <HiOutlineChevronDown size={18} />
                           </a>
                           <ul
                             className="dropdown-menu bg-transparent border-0 py-0 my-0"
@@ -1138,7 +1137,7 @@ const Navbar = ({
                             <a className="nav-link text-primary-color-two">
                               <div className="d-flex align-items-center gap-5">
                                 <span>
-                                  <BiLineChart />
+                                  <HiOutlineChartBarSquare size={18} />
                                 </span>
                                 <span className="line-h-19">
                                   {t("Futures")}
@@ -1160,7 +1159,7 @@ const Navbar = ({
                           <a className="nav-link text-primary-color-two">
                             <div className="d-flex align-items-center gap-5">
                               <span>
-                                <BiLineChart />
+                                <HiOutlineChartBarSquare size={18} />
                               </span>
                               <span className="line-h-19">{t("Markets")}</span>
                             </div>
@@ -1190,7 +1189,7 @@ const Navbar = ({
                             >
                               <div className="d-flex align-items-center gap-5">
                                 <span>
-                                  <BiWalletAlt />
+                                  <IoWalletOutline size={18} />
                                 </span>
                                 <span className="line-h-19">
                                   {navbar?.wallet?.name
@@ -1220,7 +1219,7 @@ const Navbar = ({
                               >
                                 <div className="d-flex align-items-center gap-5">
                                   <span>
-                                    <RiCalendarEventLine />
+                                    <HiOutlineRocketLaunch size={18} />
                                   </span>
                                   <span className="line-h-19">
                                     {navbar?.ico?.name
@@ -1255,7 +1254,7 @@ const Navbar = ({
                             >
                               <div className="d-flex align-items-center gap-5">
                                 <span>
-                                  <FiSettings />
+                                  <HiOutlineCog6Tooth size={18} />
                                 </span>
                                 {navbar?.fiat?.name ? (
                                   navbar?.fiat?.name
@@ -1264,7 +1263,7 @@ const Navbar = ({
                                 )}
                               </div>
 
-                              <FiChevronDown size={20} />
+                              <HiOutlineChevronDown size={18} />
                             </a>
                             <ul
                               className="dropdown-menu bg-transparent border-0 py-0 my-0"
@@ -1363,7 +1362,7 @@ const Navbar = ({
                           >
                             <div className="d-flex align-items-center gap-5">
                               <span>
-                                <HiOutlineDocumentReport />
+                                <HiOutlineDocumentChartBar size={18} />
                               </span>
                               <span className="line-h-19">
                                 {navbar?.reports?.name
@@ -1372,7 +1371,7 @@ const Navbar = ({
                               </span>
                             </div>
 
-                            <FiChevronDown size={20} />
+                            <HiOutlineChevronDown size={18} />
                           </a>
                         )}
                         <ul
@@ -1762,7 +1761,7 @@ const Navbar = ({
                               >
                                 <div className="d-flex align-items-center gap-5">
                                   <span>
-                                    <BiNetworkChart />
+                                    <HiOutlineUserGroup size={18} />
                                   </span>
                                   <span className="line-h-19">
                                     {navbar?.myReferral?.name
@@ -1877,7 +1876,7 @@ const Navbar = ({
                           >
                             <div className="d-flex align-items-center gap-5">
                               <span>
-                                <AiFillGift />
+                                <HiOutlineGift size={18} />
                               </span>
                               <span className="line-h-19">
                                 {navbar?.giftCards?.name
@@ -1885,7 +1884,7 @@ const Navbar = ({
                                   : t("Gift Cards")}
                               </span>
                             </div>
-                            <FiChevronDown size={20} />
+                            <HiOutlineChevronDown size={18} />
                           </a>
 
                           <ul
@@ -1978,7 +1977,7 @@ const Navbar = ({
                             <a className="nav-link text-primary-color-two">
                               <div className="d-flex align-items-center gap-5">
                                 <span>
-                                  <BiShapeCircle />
+                                  <HiOutlinePresentationChartLine size={18} />
                                 </span>
                                 <span className="line-h-19">
                                   {t("Demo Trade")}
@@ -2014,11 +2013,11 @@ const Navbar = ({
                           >
                             <div className="d-flex align-items-center gap-5">
                               <span>
-                                <CiSquareMore />
+                                <HiOutlineEllipsisHorizontalCircle size={18} />
                               </span>
                               <span className="line-h-19">{t("More")}</span>
                             </div>
-                            <FiChevronDown size={20} />
+                            <HiOutlineChevronDown size={18} />
                           </a>
 
                           <ul
@@ -2074,7 +2073,7 @@ const Navbar = ({
                         <div className="d-flex gap-10 align-items-center justify-content-between py-3">
                           <div className="d-flex align-items-center gap-5">
                             <span>
-                              <FiSettings size={16} />
+                              <HiOutlineCog6Tooth size={18} />
                             </span>
                             <p className="text-16 text-primary-color-two line-h-19">
                               Theme
@@ -2101,7 +2100,7 @@ const Navbar = ({
                               setActive(false);
                             }}
                           >
-                            <IoMdGlobe size={20} />
+                            <HiOutlineGlobeAlt size={20} />
                           </span>
                           <span
                             className="text-primary-color-two text-16 leading-18"
@@ -2136,7 +2135,7 @@ const Navbar = ({
                     <ul className="navbar-nav mr-auto">
                       <li className="text-right">
                         <span onClick={() => setLanguageActive(false)}>
-                          <AiOutlineClose size={20} />
+                          <HiOutlineXMark size={20} />
                         </span>
                       </li>
                       {settings?.LanguageList?.map((item: any, index: any) => (

@@ -774,15 +774,16 @@ ul {
 }
 
 span.cp-user-icon {
-  background: transparent;
-  padding: 8px;
-  border-radius: 4px;
-  height: 35px;
-  width: 35px;
+  background: rgba(var(--primary-color), 0.08);
+  padding: 0;
+  border-radius: 10px;
+  height: 32px;
+  width: 32px;
   overflow: hidden;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 14px;
-  /* vertical-align: middle; */
 }
 
 .cp-user-sidebar-hide {
@@ -4641,16 +4642,48 @@ select:-webkit-autofill:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: #f2f2f2; */
-  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 10px;
+  background: rgba(var(--primary-color), 0.08);
   color: rgb(var(--primary-color));
-  font-size: 18px;
+  font-size: 16px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.main-menu ul li a.menu-hover:hover span.cp-user-icon,
+.main-menu ul li:hover > a span.cp-user-icon {
+  background: rgba(var(--primary-color), 0.16);
+  transform: translateY(-1px);
 }
 
 .main-menu ul li a .cp-user-icon img {
   width: 16px;
   height: 16px;
   object-fit: contain;
+}
+
+.main-menu ul li a {
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+
+.main-menu .dropdown-menu {
+  border-radius: 12px !important;
+  padding: 8px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.main-menu .dropdown-menu li a.menu-hover {
+  border-radius: 8px;
+  padding: 8px 12px;
+  gap: 10px;
+}
+
+.main-menu .dropdown-menu li a.menu-hover:hover {
+  background: rgba(var(--primary-color), 0.06);
 }
 
 .main-menu ul li:hover .cp-user-side-bar-icon {
@@ -17287,4 +17320,101 @@ input:checked + .gift-card-buy-slider:before {
 
 .theme-spot-btn-green:hover {
   color: var(--white) !important;
+}
+
+/* ============================================================
+   Modern UI polish layer (visual only - no functional changes)
+   ============================================================ */
+
+/* Smoother text rendering everywhere */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tighter, more premium headings */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.015em;
+}
+
+/* Brand-colored text selection */
+::selection {
+  background: rgba(var(--primary-color), 0.22);
+}
+
+/* Slim modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--primary-color), 0.3);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--primary-color), 0.5);
+}
+
+/* Smooth interactive feedback on buttons and links */
+a,
+button,
+.btn {
+  transition: color 0.18s ease, background-color 0.18s ease,
+    border-color 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+/* Subtle press feedback */
+button:active,
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Softer, consistent focus ring on form fields */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.form-control:focus {
+  outline: none !important;
+  border-color: rgba(var(--primary-color), 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(var(--primary-color), 0.14) !important;
+}
+
+/* Cards: slightly rounder + smoother hover */
+.cp-user-custom-card {
+  border-radius: 12px;
+}
+
+/* Table rows: gentle hover highlight */
+table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+/* Dropdown menus: modern elevation */
+.dropdown-menu {
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* Modals: softer corners and deeper shadow */
+.modal-content {
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  border: none;
+}
+
+/* Images inside links shouldn't get dragged accidentally */
+a img {
+  -webkit-user-drag: none;
 }

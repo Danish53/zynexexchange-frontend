@@ -28,10 +28,11 @@ const BottomDetails = ({ landing }: any) => {
             </div>
 
             <div className=" tradex-flex tradex-flex-col lg:tradex-flex-row tradex-gap-12 tradex-items-center">
-              <div className=" tradex-order-2 xl:tradex-order-none">
+              <div className=" tradex-order-2 xl:tradex-order-none tradex-flex tradex-justify-center">
                 <img
                   src={landing?.secure_trade_left_img || "/secure_trend.png"}
                   alt=""
+                  className="tradex-w-full tradex-max-w-[560px] tradex-object-contain"
                 />
               </div>
               <div className="lg:tradex-min-w-[500px] lg:tradex-max-w-[500px] xl:tradex-min-w-[695px] xl:tradex-max-w-[695px] tradex-space-y-4 md:tradex-space-y-8">

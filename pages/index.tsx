@@ -19,6 +19,7 @@ import StartTradingNow from "components/Homepage/StartTradingNow";
 import CommunityHome from "components/community/CommunityHome";
 import BottomDetailsTwo from "components/Homepage/BottomDetailsTwo";
 import AdsSection from "components/Homepage/AdsSection";
+import MobileQuickActions from "components/Homepage/MobileQuickActions";
 const Home: NextPage = ({
   landing,
   bannerListdata,
@@ -73,6 +74,8 @@ const Home: NextPage = ({
               landing={landing}
               announcementListdata={announcementListdata}
             />
+
+            <MobileQuickActions loggedin={loggedin} />
             <MarketTrends
               landing={landing}
               asset_coin_pairs={asset_coin_pairs}

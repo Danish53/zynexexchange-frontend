@@ -12,7 +12,7 @@ export default function StartTrending() {
   return (
     <section className=" tradex-mx-2 xl:tradex-mx-0  tradex-pt-[60px] md:tradex-pt-[120px] -tradex-mb-[40px] md:-tradex-mb-[80px]">
       <div
-        className={` tradex-bg-primary tradex-container tradex-flex tradex-flex-col tradex-items-center tradex-justify-center tradex-gap-2 md:tradex-gap-8 tradex-rounded-lg tradex-min-h-[120px] md:tradex-min-h-[220px]  tradex-relative tradex-overflow-hidden`}
+        className={` tradex-bg-primary tradex-container tradex-flex tradex-flex-col tradex-items-center tradex-justify-center tradex-gap-2 md:tradex-gap-8 tradex-rounded-xl tradex-py-6 md:tradex-py-10 tradex-min-h-[120px] md:tradex-min-h-[220px]  tradex-relative tradex-overflow-hidden tradex-shadow-[2px_2px_50px_0px_#0000001A]`}
       >
         <img
           src="/start_trend_left.png"
@@ -26,7 +26,7 @@ export default function StartTrending() {
         <div className="tradex-flex tradex-gap-4 sm:tradex-gap-6 tradex-items-center tradex-relative tradex-z-10">
           {!isLoggedIn && (
             <Link href="/signup">
-              <button className="tradex-px-3 tradex-py-2 md:tradex-px-10 md:tradex-py-4 tradex-rounded-lg tradex-bg-white tradex-text-black tradex-text-xs md:tradex-text-base tradex-font-bold">
+              <button className="tradex-px-3 tradex-py-2 md:tradex-px-10 md:tradex-py-4 tradex-rounded-lg tradex-bg-white tradex-text-black tradex-text-xs md:tradex-text-base tradex-font-bold tradex-transition-transform hover:tradex-scale-105">
                 {t("Sign Up")}
               </button>
             </Link>
@@ -38,7 +38,7 @@ export default function StartTrending() {
                 : "/exchange/dashboard"
             }
           >
-            <button className="tradex-px-3 tradex-py-2 md:tradex-px-10 md:tradex-py-4 tradex-rounded-lg tradex-bg-white tradex-text-black tradex-text-xs md:tradex-text-base tradex-font-bold">
+            <button className="tradex-px-3 tradex-py-2 md:tradex-px-10 md:tradex-py-4 tradex-rounded-lg tradex-bg-white tradex-text-black tradex-text-xs md:tradex-text-base tradex-font-bold tradex-transition-transform hover:tradex-scale-105">
               {t("Trade Now")}
             </button>
           </a>
