@@ -81,7 +81,7 @@ const MobileQuickActions = ({ loggedin }: { loggedin: boolean }) => {
   ];
 
   return (
-    <section className="md:tradex-hidden tradex-px-4 tradex-py-6 tradex-space-y-5">
+    <section className="md:tradex-hidden tradex-relative tradex-z-20 tradex-px-4 tradex-py-6 tradex-space-y-5">
       {loggedin && (
         <div className="tradex-rounded-2xl tradex-bg-background-main tradex-border tradex-border-background-primary tradex-shadow-[2px_2px_23px_0px_#6C6C6C0D] tradex-p-5 tradex-space-y-4">
           <p className="tradex-text-sm tradex-leading-4 tradex-font-semibold !tradex-text-body tradex-mb-0">
